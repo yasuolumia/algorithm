@@ -1,7 +1,8 @@
+# coding=utf-8
 '''
 Author: Ezreal
 Date: 2020-10-20 11:36:02
-LastEditTime: 2020-10-20 14:41:40
+LastEditTime: 2020-10-28 22:49:45
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /algorithm/removeDuplicates/removeDuplicates.py
@@ -30,19 +31,20 @@ FilePath: /algorithm/removeDuplicates/removeDuplicates.py
 
 你不需要考虑数组中超出新长度后面的元素。
 """
-# coding=utf-8
+
+
 class Solution(object):
     def removeDuplicates(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        if len(nums)==0:
+        if len(nums) == 0:
             return 0
         i = 0
         j = 1
         while j < len(nums):
-            if nums[i]==nums[j]:
+            if nums[i] == nums[j]:
                 nums.remove(nums[i])
             else:
                 i = i+1
@@ -50,7 +52,26 @@ class Solution(object):
         return len(nums)
 
 
+class RemoveDuplicate(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        i = 0
+        while i+1 < len(nums):
+            if nums[i] == nums[i+1]:
+                nums = list(nums[:i])+list(nums[i+1:])
+            else:
+                i += 1
+        print(nums)
+        return len(nums)
+
+
 if __name__ == "__main__":
     a = Solution()
-    nums = [0,0,1,1,1,2,2,3,3,4]
-    a.removeDuplicates(nums)
+    b = RemoveDuplicate()
+    nums = [1,1,2]
+    # a.removeDuplicates(nums)
+    # print a.removeDuplicates(nums)
+    b.removeDuplicates(nums)

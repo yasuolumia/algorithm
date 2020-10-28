@@ -2,7 +2,7 @@
 '''
 Author: Ezreal
 Date: 2020-10-21 21:01:09
-LastEditTime: 2020-10-28 16:15:18
+LastEditTime: 2020-10-28 21:00:50
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /algorithm/maxDepth/maxDepth.py
