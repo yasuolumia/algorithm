@@ -2,7 +2,7 @@
 '''
 Author: Ezreal
 Date: 2020-10-21 21:01:09
-LastEditTime: 2020-10-28 21:00:50
+LastEditTime: 2020-11-06 11:14:50
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /algorithm/maxDepth/maxDepth.py
@@ -74,7 +74,7 @@ class BinaryTree:
                 else:
                     queue.append(node.rchild)
 
-    def breadh_travel(self):
+    def breadth_travel(self):
         """广度优先遍历"""
         if self.root is None:
             return
@@ -126,7 +126,7 @@ if __name__ == "__main__":
     data = [3, 9, 20, None, None, 15, 7]
     for item in data:
         tree.add(item)
-    tree.breadh_travel()
+    tree.breadth_travel()
     print("")
     tree.preorder_travel(tree.root)
     print("")
