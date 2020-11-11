@@ -49,6 +49,25 @@ class Solution(object):
             return False
 
 
+class Solution2:
+    def isValid(self, s):
+        dic = {')': '(', ']': '[', '}': '{'}
+        stack = []
+        for i in s:
+            if stack and i in dic:
+                if stack[-1] == dic[i]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(i)
+
+        if stack:
+            return False
+        else:
+            return True
+
+
 if __name__ == '__main__':
     s0 = "({}]"
     s = "([)]"
@@ -56,7 +75,7 @@ if __name__ == '__main__':
     s2 = "(("
     s3 = "()[]{}"
     s4 = "))"
-    s5 = "[[[]"
+    s5 = "[[[]]]"
     s6 = "()"
-    K = Solution()
-    print K.isValid(s0)
+    K = Solution2()
+    print K.isValid(s5)
